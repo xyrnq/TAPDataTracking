@@ -78,8 +78,10 @@ def update_death_m_average():
 # returns true if a change, false otherwise
 def update_m_time():
 	global mTime
+	# there is a slight delay because of the if statement so getting the time first
+	time = TDIH.get_timer()
 	if mTime == None and TDIH.get_level() > 500:
-		mTime = TDIH.get_timer()
+		mTime = time
 		return True
 		
 	return False
